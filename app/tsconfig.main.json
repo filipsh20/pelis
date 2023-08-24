@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "target": "ES6", // La versión de ECMAScript que se va a compilar
+    "module": "commonjs", // El sistema de módulos a utilizar
+    "outDir": "build", // Directorio de salida para los archivos compilados
+    "strict": true, // Habilitar comprobaciones estrictas de tipo
+    "esModuleInterop": true, // Habilitar interoperabilidad entre CommonJS y ES Modules
+    "resolveJsonModule": true // Permitir la importación de archivos JSON como módulos
+  },
+  "include": ["electron"]
+}
