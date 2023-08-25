@@ -5,7 +5,7 @@ const terser = require('terser');
 
 async function convertMainTsToJs() {
     const mainTsPath = path.join(process.cwd(), 'electron/main.ts');
-    const mainJsPath = path.join(process.cwd(), 'dist/main.js');
+    const mainJsPath = path.join(process.cwd(), 'build/main.js');
 
     const tsConfig = {
         target: ts.ScriptTarget.ESNext,
@@ -16,7 +16,7 @@ async function convertMainTsToJs() {
     const jsCode = ts.transpileModule(tsCode, { compilerOptions: tsConfig }).outputText;
 
     const minifiedCode = await terser.minify(jsCode, { output: { inline_script: true } });
-    await fs.mkdir(path.join(process.cwd(), 'dist'), { recursive: true });
+    await fs.mkdir(path.join(process.cwd(), 'build'), { recursive: true });
     await fs.writeFile(mainJsPath, minifiedCode.code);
 }
 
