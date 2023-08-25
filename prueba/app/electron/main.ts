@@ -11,7 +11,7 @@ function createWindow() {
     },
   });
 
-  mainWindow.loadUrl("http://localhost:5173");
+  mainWindow.loadURL("http://localhost:5173");
 
   mainWindow.on("closed", () => {
     mainWindow = null;
